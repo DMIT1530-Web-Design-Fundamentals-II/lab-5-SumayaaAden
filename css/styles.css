@@ -1,56 +1,360 @@
 :root {
-    --white: #F2F2F2;
-    --accent: #dca530;
-    --hover: #fcc650;
-    --dark: #181413;
-    --pop: #684551;
+  --white: #f2f2f2;
+  --accent: #dca530;
+  --hover: #fcc650;
+  --dark: #181413;
+  --pop: #684551;
 }
 
 /* Universal Styles */
 
 body {
-    background-color: var(--white);
-    font: 1rem/1.5 "Lato", Arial, sans-serif;
+  background-color: var(--white);
+  font: 1rem/1.5 "Lato", Arial, sans-serif;
 }
 
 /* Utility Classes */
 
 .inner-container {
-    max-width: 1024px;
-    margin: auto;
+  max-width: 1024px;
+  margin: auto;
 }
 
 .sr-only {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 
 /* Typography */
 
 h1 {
-    font-family: 'Hurricane', cursive;
+  font-family: "Hurricane", cursive;
 }
 
-
 /* Header */
+header {
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--pop);
+  color: var(--white);
+}
 
+.logo-container {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+nav .inner-container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.sticky-nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--pop);
+  padding: 0.5rem 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.sign-in-button,
+.sign-up-button {
+  background-color: var(--accent);
+  color: var(--dark);
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 1rem;
+  border-radius: 0.313rem;
+}
+.sign-in-button:hover,
+.sign-up-button:hover {
+  text-decoration: underline;
+}
+.sign-in-button:hover {
+  background-color: var(--hover);
+}
+.menu-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.menu-button img {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+}
+.sign-up-button {
+  background: none;
+  color: var(--white);
+}
 
 /* Hero Banner */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("../img/hero.webp");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  height: calc(100vh - 7.875rem);
+}
 
+.hero-text {
+  max-width: 37.5rem;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: lighter;
+  text-align: left;
+  line-height: 1;
+}
+.hero-text h2 span {
+  display: block;
+  padding-left: 2.25rem;
+}
+.hero-text p {
+  margin-bottom: 3rem;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.shop-button {
+  background-color: var(--accent);
+  text-decoration: none;
+  color: var(--dark);
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.shop-button:hover {
+  background-color: var(--hover);
+  text-decoration: underline;
+}
 
 /* Parallax */
+.about {
+  display: flex;
+  background-image: url("../img/splash-mobile.webp");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  justify-content: flex-end;
+  color: var(--dark);
+  min-height: 100vh;
+}
 
+.about-content {
+  width: 50%;
+}
 
+.about h2 {
+  font-size: 1.75rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.about p {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
 
 /* Horizontal Scroll */
+.favourites {
+  padding: 1rem 0 1rem 1rem;
+  background-color: var(--white);
+  color: var(--dark);
+}
+.favourites h2 {
+  font-size: 3rem;
+  font-weight: lighter;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2rem;
+}
+.horizontal-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  margin-bottom: 5rem;
+  scrollbar-color: var(--accent) var(--white);
+  scrollbar-width: thin;
+}
 
+.product-card {
+  border-radius: 0.2rem;
+  flex: 0 0 100%;
+  padding: 1rem;
+  background-color: #fff;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
+.product-card img {
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+.product-card p:first-of-type {
+  color: var(--pop);
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  padding-top: 1rem;
+}
+.product-card h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.description {
+  text-align: left;
+  padding-bottom: 2rem;
+}
+.product-button {
+  background-color: var(--accent);
+  color: var(--dark);
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  width: 100%;
+}
+.product-button:hover {
+  background-color: var(--hover);
+}
+.card-3-special-position {
+  position: relative;
+  top: 3rem;
+}
+.card-4-special-position {
+  position: relative;
+  top: 3rem;
+}
 
 /* Footer */
+footer {
+  background-color: var(--pop);
+  color: var(--white);
+  padding: 2rem 1rem;
+  text-align: left;
+}
 
+.newsletter {
+  margin-bottom: 2rem;
+}
 
+.newsletter h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
 
+.newsletter p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+form input[type="email"] {
+  width: 70%;
+}
+form button[type="submit"] {
+  background-color: var(--accent);
+  border: none;
+}
+form button[type="submit"]:hover {
+  background-color: var(--hover);
+}
+.footer-links {
+  margin-bottom: 2rem;
+}
+
+.footer-links div {
+  margin-bottom: 1.5rem;
+}
+
+.footer-links h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.disclaimer p {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Media Queries */
 @media screen and (min-width: 50rem) {
+  .menu-button img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0;
+  }
+  .hero-text h2 span {
+    padding-left: 7rem;
+  }
 
+  .about {
+    background-image: url("../img/splash.webp");
+  }
+
+  .about-content {
+    max-width: 1024px;
+    height: auto;
+    align-content: center;
+    padding-right: 10rem;
+  }
+  .product-card {
+    flex: 0 0 24rem;
+    height: auto;
+  }
+  form input[type="email"] {
+    width: 18.75rem;
+  }
+  form {
+    margin-top: 2rem;
+  }
+  footer .inner-container > .newsletter,
+  footer .inner-container > .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  footer .newsletter div {
+    max-width: 50%;
+  }
 }
